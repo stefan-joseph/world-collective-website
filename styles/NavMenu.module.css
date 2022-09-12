@@ -157,6 +157,11 @@
   text-transform: capitalize;
   opacity: 0;
   transform: translateY(4vw) rotate(5deg);
+  /* animation: fadeIn 1s cubic-bezier(0, 0, 0, 1) forwards;
+  animation-delay: calc(500ms + (var(--order) * 100ms)); */
+}
+
+.fadeIn {
   animation: fadeIn 1s cubic-bezier(0, 0, 0, 1) forwards;
   animation-delay: calc(500ms + (var(--order) * 100ms));
 }

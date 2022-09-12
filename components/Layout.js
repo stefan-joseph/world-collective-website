@@ -13,7 +13,7 @@ export default function Layout({ children }) {
 
   useEffect(() => {
     // use while in dev mode
-    // setTimeout(() => setPageLoading(false), 1500);
+    setTimeout(() => setPageLoading(false), 1500);
 
     // to bypass cached scroll location on refresh
     // fires during page load animation

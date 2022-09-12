@@ -161,7 +161,13 @@ const NavMenu = ({ menuIsClosed, toggleMenu }) => {
                 </div>
                 <Link href={href}>
                   <a
-                    className={`${styles.item} page-link`}
+                    className={
+                      menuIsClosed === "opening" ||
+                      menuIsClosed === "closing" ||
+                      !menuIsClosed
+                        ? `${styles.item} ${styles.fadeIn} page-link`
+                        : `${styles.item} page-link`
+                    }
                     ref={(e) => {
                       menuItemRefs.current[index] = e;
                     }}
