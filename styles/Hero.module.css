@@ -1,0 +1,196 @@
+.header {
+  color: white;
+  font-size: 0.83vw;
+  padding-bottom: 10vw;
+}
+
+.container {
+  position: relative;
+  margin: 0 8.33333vw;
+  z-index: 1;
+}
+
+.initial {
+  display: flex;
+
+  height: 100vh;
+  position: relative;
+}
+
+.title {
+  margin-top: auto;
+  grid-column: 1/13;
+  grid-row-end: 13;
+  text-transform: uppercase;
+  font-size: 1em;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+
+  opacity: 0;
+  transform: translateY(20vw);
+}
+
+.animateTitle {
+  animation: slideInTitle var(--pageTransitionDuration)
+    var(--pageTransitionTiming) 0.5s forwards;
+}
+
+@keyframes slideInTitle {
+  from {
+    opacity: 0;
+    transform: translateY(20vw);
+  }
+  30% {
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.line {
+  display: flex;
+  align-items: flex-end;
+  align-content: flex-end;
+}
+
+.line:first-child {
+  font-size: 3.5em;
+  font-weight: 100;
+  line-height: 1.5em;
+}
+
+.line:nth-child(2) {
+  font-size: 10em;
+  letter-spacing: -0.06em;
+  line-height: 0.7em;
+}
+
+.line:nth-child(3) {
+  font-weight: 100;
+  font-size: 6em;
+}
+
+.arrow {
+  position: absolute;
+  font-size: 5vw;
+  bottom: 0;
+  right: -5vw;
+  font-weight: 100;
+}
+
+.animateArrow {
+  animation: slideInArrow var(--pageTransitionDuration)
+    var(--pageTransitionTiming) 0.5s;
+}
+
+@keyframes slideInArrow {
+  from {
+    opacity: 0;
+    transform: translateX(20vw);
+  }
+  30% {
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.additional {
+  position: relative;
+}
+
+.text {
+  font-size: 2em;
+  margin-top: 3em;
+  font-weight: 100;
+  line-height: 1.3em;
+  /* letter-spacing: 0.02em; */
+}
+
+.info {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  width: 60vw;
+  justify-content: space-between;
+  margin-top: 8em;
+  font-size: 1em;
+}
+
+.info h6 {
+  font-weight: 400;
+  margin-bottom: 1em;
+}
+
+.info div div {
+  line-height: 1.3;
+  font-weight: 100;
+}
+
+.background {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+  z-index: -1;
+  min-height: 140vh;
+}
+
+.image {
+  will-change: transform;
+  width: 100vw;
+  height: auto;
+  display: block;
+}
+
+.img {
+  position: absolute;
+  top: -22vw;
+  width: 100vw;
+  z-index: -1;
+  object-fit: cover;
+}
+
+@media (max-width: 1200px) {
+  .header {
+    font-size: 10px;
+  }
+  .arrow {
+    font-size: 60px;
+  }
+}
+
+@media (max-width: 600px) {
+  .header {
+    font-size: 1.7vw;
+  }
+  .container {
+    margin: 0 3vw;
+  }
+  .text {
+    font-size: 20px;
+  }
+  .info {
+    width: 100vw;
+    font-size: 12px;
+  }
+  .arrow {
+    font-size: 10vw;
+    right: 0;
+  }
+}
+
+@media (max-width: 300px) {
+  .text {
+    font-size: 6vw;
+  }
+  .info {
+    font-size: 3.5vw;
+  }
+}

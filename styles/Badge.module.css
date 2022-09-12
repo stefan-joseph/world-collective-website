@@ -1,0 +1,27 @@
+.logo {
+  position: relative;
+  /* font-family: "Supply"; */
+  /* border: 1px solid red; */
+}
+
+.text {
+  animation: spin 40s linear infinite;
+  transform-origin: center;
+}
+
+.globe {
+  animation: spin 60s linear infinite reverse;
+  transform-origin: center;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.svg {
+}

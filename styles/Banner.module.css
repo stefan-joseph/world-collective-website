@@ -1,0 +1,160 @@
+.banner {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.text {
+  width: 30vw;
+  z-index: 3;
+}
+
+.title {
+  font-size: 1vw;
+}
+
+.title div:first-child {
+  font-size: 5em;
+  text-transform: uppercase;
+  letter-spacing: -0.05em;
+  line-height: 0.7em;
+  opacity: 0.7;
+}
+
+.title div:nth-child(2) {
+  font-size: 2.5em;
+  text-transform: uppercase;
+  font-weight: 100;
+  letter-spacing: -0.05em;
+  /* line-height: 1.8vw; */
+  /* opacity: 0.6; */
+}
+
+.title div:nth-child(3) {
+  font-size: 3em;
+  letter-spacing: -0.1em;
+  /* line-height: 2.8em; */
+  font-style: italic;
+}
+
+.info {
+  font-size: 1vw;
+  opacity: 0.7;
+  line-height: 1.7em;
+  letter-spacing: 0.02em;
+}
+
+.break {
+  border: none;
+  background-color: black;
+
+  width: 6vw;
+  height: 0.1vw;
+  margin: 0;
+  padding: 0;
+}
+
+.text > * {
+  margin-bottom: 2vw;
+}
+
+.images {
+  display: flex;
+  position: relative;
+  align-items: center;
+  width: 50vw;
+}
+
+.big {
+  width: 60vw;
+  position: relative;
+  /* perspective: 100px; */
+  overflow: hidden;
+}
+
+.small {
+  position: absolute;
+  width: 10vw;
+  overflow: hidden;
+  top: 9.2vw;
+  left: -7.5vw;
+  z-index: 2;
+}
+
+.item {
+  /* overflow: hidden; */
+}
+
+.img {
+  transform: scale();
+}
+
+@media (max-width: 800px) {
+  .banner > * {
+    /* margin-top: 12vw; */
+  }
+  .text {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 4vw;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    font-size: 10px;
+  }
+
+  .title {
+    font-size: 1em;
+  }
+
+  .title div:first-child {
+    margin-left: 0.5em;
+  }
+
+  .title div:nth-child(2) {
+    font-weight: 400;
+    font-size: 3em;
+  }
+
+  .title div:nth-child(3) {
+    font-size: 10em;
+    margin-top: -0.3em;
+    opacity: 0.15;
+    font-weight: 100;
+    margin-left: 0.4em;
+  }
+
+  .break {
+    /* display: none; */
+  }
+
+  .info {
+    font-size: 1.4em;
+    margin-top: 1em;
+  }
+
+  .images {
+    width: 100%;
+    margin-top: 12vw;
+  }
+
+  .big {
+    width: 100%;
+    margin-left: 12vw;
+  }
+
+  .small {
+    width: 20%;
+    left: 0vw;
+  }
+}
+
+@media (max-width: 300px) {
+  .text {
+    font-size: 3.2vw;
+  }
+}

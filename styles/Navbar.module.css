@@ -1,0 +1,221 @@
+.logo,
+.badge,
+.nav,
+.menu {
+  position: fixed;
+  z-index: 11;
+  color: white;
+}
+
+.logo {
+  top: 1.5vw;
+  left: 3vw;
+  font-size: 10vw;
+  overflow: hidden;
+}
+
+.logo div {
+  opacity: 0;
+  transform: translateY(10vh);
+  pointer-events: none;
+  transition: transform var(--pageTransitionDuration)
+      var(--pageTransitionTiming) 0.5s,
+    opacity var(--pageTransitionDuration) var(--pageTransitionTiming) 0.5s;
+}
+
+.badge {
+  top: 2vw;
+  left: 3vw;
+  font-size: 3.5vw;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.nav {
+  top: 3em;
+  right: 3vw;
+  font-size: 1vw;
+  letter-spacing: 0.03em;
+  font-weight: 100;
+  z-index: 12;
+}
+
+.nav ul {
+  display: flex;
+  align-items: center;
+  gap: 2.8em;
+}
+
+.nav li {
+  transform: translateY(10vh);
+  pointer-events: none;
+  opacity: 0;
+  transition: transform var(--pageTransitionDuration)
+      var(--pageTransitionTiming) calc((var(--order) * 0.1s) + 0.5s),
+    opacity var(--pageTransitionDuration) var(--pageTransitionTiming)
+      calc((var(--order) * 0.1s) + 0.8s);
+}
+
+.nav a {
+  position: relative;
+}
+
+.nav a:after {
+  content: "";
+  bottom: -0.1em;
+  position: absolute;
+  left: 0;
+  height: 0.08em;
+  width: 100%;
+  transform: scaleX(0);
+  will-change: transform;
+  background: currentColor;
+  transform-origin: right center;
+  transition: transform 0.5s cubic-bezier(1, 0, 0, 1);
+  box-sizing: border-box;
+}
+
+.nav a:hover:after {
+  transform: scaleX(1);
+  transform-origin: left center;
+}
+
+.container {
+  position: fixed;
+  top: 1.7em;
+  left: 0;
+  width: 100vw;
+}
+
+.current {
+  position: relative;
+  font-size: 1.3em;
+  transform: scale(0);
+}
+
+.minimize {
+  animation: minimize 400ms linear forwards;
+}
+
+@keyframes minimize {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+
+.maximize {
+  animation: maximize 400ms linear forwards;
+}
+
+@keyframes maximize {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.current svg {
+  position: absolute;
+  left: -0.5em;
+  top: -0.34em;
+}
+
+.menu {
+  top: 3vw;
+  right: 3vw;
+  font-size: 1vw;
+  font-weight: 100;
+}
+
+.menu button {
+  display: flex;
+  align-items: flex-end;
+}
+
+.label {
+}
+
+.icon {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  font-weight: 100;
+  margin-left: 0.8vw;
+}
+
+.icon div {
+  transition: transform 200ms linear;
+}
+
+.icon div:first-child {
+  align-self: flex-end;
+}
+
+.icon div:nth-child(2) {
+  position: absolute;
+  top: 0.2em;
+}
+.icon div:nth-child(3) {
+  position: absolute;
+  top: -0.2em;
+}
+
+.menu:hover button .icon div:first-child {
+  /* transform: translate(0.1vw, 0); */
+}
+
+.menu:hover button .icon div:nth-child(2) {
+  transform: translate(-0.1em, 0);
+}
+
+.menu:hover button .icon div:nth-child(3) {
+  transform: translate(0.1em, 0);
+}
+
+@media (max-width: 1200px) {
+  .nav,
+  .menu {
+    font-size: 12px;
+  }
+  .logo {
+    font-size: 120px;
+  }
+  .badge {
+    font-size: 42px;
+  }
+}
+
+@media (max-width: 600px) {
+  .logo {
+    top: 10px;
+    font-size: 120px;
+  }
+  .nav {
+    display: none;
+  }
+  .menu {
+    top: 20px;
+    font-size: 18px;
+  }
+}
+@media (max-width: 220px) {
+  .logo {
+    font-size: 55vw;
+  }
+
+  .menu {
+    font-size: 8vw;
+  }
+}
