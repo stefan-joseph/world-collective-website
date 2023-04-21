@@ -138,52 +138,6 @@
   font-weight: 100;
 }
 
-.menu button {
-  display: flex;
-  align-items: flex-end;
-}
-
-.label {
-}
-
-.icon {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  gap: 1px;
-  font-weight: 100;
-  margin-left: 0.8vw;
-}
-
-.icon div {
-  transition: transform 200ms linear;
-}
-
-.icon div:first-child {
-  align-self: flex-end;
-}
-
-.icon div:nth-child(2) {
-  position: absolute;
-  top: 0.2em;
-}
-.icon div:nth-child(3) {
-  position: absolute;
-  top: -0.2em;
-}
-
-.menu:hover button .icon div:first-child {
-  /* transform: translate(0.1vw, 0); */
-}
-
-.menu:hover button .icon div:nth-child(2) {
-  transform: translate(-0.1em, 0);
-}
-
-.menu:hover button .icon div:nth-child(3) {
-  transform: translate(0.1em, 0);
-}
-
 @media (max-width: 1200px) {
   .nav,
   .menu {

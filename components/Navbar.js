@@ -153,7 +153,7 @@ function Navbar({ toggleMenu, menuIsClosed, beginPageAnimation }) {
             >
               <Link href={href}>
                 <a
-                  className={styles.item}
+                  // className={styles.item}
                   ref={(e) => {
                     navItemRefs.current[index] = e;
                   }}

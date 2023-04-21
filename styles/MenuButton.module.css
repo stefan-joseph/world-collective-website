@@ -1,0 +1,121 @@
+.button {
+  display: flex;
+  align-items: flex-end;
+  /* border: 1px solid blue; */
+  width: 4.6em;
+  height: 1.4em;
+  overflow: hidden;
+  position: relative;
+}
+
+.label {
+  position: relative;
+  transform: translateY(1.7em);
+  transition: transform 0.5s ease;
+}
+
+.labelMakeClose {
+  transform: translateY(0.02em) rotate(-17deg);
+  transition: transform 0.5s ease;
+}
+
+.labelMenu {
+}
+
+.labelClose {
+  position: "absolute";
+  margin-top: 0.6em;
+  transform: rotate(17deg);
+}
+
+.icon {
+  position: relative;
+  transform: translateX(1.2em) translateY(-0.5em);
+  transition: transform 0.3s ease;
+  will-change: transform;
+}
+
+.button:hover .icon {
+  transform: translateX(1.2em) translateY(-0.5em) rotate(90deg);
+  transform-origin: center;
+}
+
+.menuLine {
+  transform: translateX(-50%);
+}
+
+.menuLine:after {
+  content: "";
+  position: absolute;
+  width: 1.2em;
+  height: 1px;
+  background: white;
+  transform: translateX(-50%);
+  transition: transform 0.5s ease;
+  transform-origin: right center;
+}
+
+.menuLineHide:after {
+  content: "";
+  position: absolute;
+  width: 1.2em;
+  height: 1px;
+  background: white;
+  transform: translateX(-50%);
+  transition: transform 0.5s ease;
+  transform-origin: right center;
+}
+
+.menuLine:first-child:after {
+  transform: translateY(-0.04em) translateX(-50%);
+  transition-delay: 0.3s;
+}
+
+.menuLineHide:first-child:after {
+  transform: translateY(-0.04em) translateX(-50%) scaleX(0);
+  transition-delay: 0s;
+}
+
+.menuLine:nth-child(2):after {
+  transform: translateY(0.31em) translateX(-50%);
+  transition-delay: 0.4s;
+}
+
+.menuLineHide:nth-child(2):after {
+  transform: translateY(0.31em) translateX(-50%) scaleX(0);
+  transition-delay: 0.1s;
+}
+
+.menuLine:nth-child(3):after {
+  transform: translateY(-0.39em) translateX(-50%);
+  transition-delay: 0.5s;
+}
+
+.menuLineHide:nth-child(3):after {
+  transform: translateY(-0.39em) translateX(-50%) scaleX(0);
+  transition-delay: 0.2s;
+}
+
+.menuLine:nth-child(4):after {
+  transform: translateY(-0.04em) translateX(-50%) rotate(45deg) scaleX(0);
+  transition-delay: 0s;
+  transform-origin: center;
+}
+
+.menuLineHide:nth-child(4):after {
+  transform: translateY(-0.04em) translateX(-50%) rotate(45deg);
+  transition-delay: 0.4s;
+  transform-origin: center;
+}
+
+.menuLine:nth-child(5):after {
+  transform: translateY(-0.04em) translateX(-50%) rotate(-45deg) scaleX(0);
+  transition-delay: 0.1s;
+  transform-origin: center;
+}
+
+.menuLineHide:nth-child(5):after {
+  transform: translateY(-0.04em) translateX(-50%) rotate(-45deg);
+  transition-delay: 0.5s;
+  transform-origin: center;
+}

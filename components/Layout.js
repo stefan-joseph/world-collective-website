@@ -15,9 +15,9 @@ export default function Layout({ children }) {
     // use while in dev mode
     setTimeout(() => setPageLoading(false), 1500);
 
-    // to bypass cached scroll location on refresh
+    // to bypass cached scroll location on refresh once script completed
     // fires during page load animation
-    setTimeout(() => window.scrollTo(0, 0), 100);
+    setTimeout(() => window.scrollTo(0, 0));
     window.addEventListener("load", (event) => {
       // console.log("page is fully loaded");
       setPageLoading(false);
@@ -51,7 +51,7 @@ export default function Layout({ children }) {
             ? `${styles.pageContainer} ${styles.pageHidden}`
             : !menuIsClosed || menuIsClosed === "opening"
             ? `${styles.pageContainer} ${styles.pageContainerShift}`
-            : `${styles.pageContainer} `
+            : `${styles.pageContainer}`
         }
       >
         <PageTransition menuIsClosed={menuIsClosed}>
